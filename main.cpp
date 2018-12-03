@@ -405,6 +405,7 @@ int main()
 
     u1.clear();
     u1.str("http://www.example.com/?q=some+search+key&fast");
+	cout << u1.path_with_query() << endl;
     u3=u1;
     Url u4(std::move(u1));
     u2=std::move(u3);
@@ -420,6 +421,7 @@ int main()
 
 
     cout << "processing time: " <<  double(clock() - start) / CLOCKS_PER_SEC << endl;
+	
     return 0;
 }
 

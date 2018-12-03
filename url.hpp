@@ -87,6 +87,9 @@ public:
     // Get path
     const std::string& path() const {lazy_parse(); return m_path;}
 
+	// Get path with query string
+	std::string path_with_query() const { if (!m_built) build_url(); return m_path + m_query_str; }
+
     // Set path
     Url &path(const std::string& str);
 
@@ -194,6 +197,7 @@ private:
     mutable std::string m_host;
     mutable std::string m_port;
     mutable std::string m_path;
+	mutable std::string m_query_str;
     mutable Query m_query;
     mutable std::string m_fragment;
     mutable std::string m_url;
